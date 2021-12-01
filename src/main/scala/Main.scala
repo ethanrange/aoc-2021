@@ -1,6 +1,6 @@
 object Main extends App {
   val solution = new Day1()
 
-  solution.star1()
-  solution.star2()
+  println(solution.star1())
+  println(solution.star2())
 }
