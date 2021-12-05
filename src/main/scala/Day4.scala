@@ -49,5 +49,3 @@ class Day4 {
     last * sumBoard(fin)
   }
 }
-
-
