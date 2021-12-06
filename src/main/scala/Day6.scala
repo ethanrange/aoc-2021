@@ -10,7 +10,13 @@ class Day6 {
   def calc(a: Int, b: Int): BigInt = cache.getOrElseUpdate(
     (a, b), if (a >= b) 1 else (calc(6, b - a - 1) + calc(8, b - a - 1)))
 
+  def alternateCalc(days: Int): BigInt = Iterator
+    .iterate(Array.tabulate(10)(i => BigInt(digits.count(_ == i))))(_ match {
+      case Array(a, b, c, d, e, f, g, h, i, j) =>
+        Array(b, c, d, e, f, g, h + a, i, j + a, 0)
+    }).drop(days).next.sum
+
   def star1(): BigInt = digits.map(calc(_, 80)).sum
 
-  def star2(): BigInt = digits.map(calc(_, 256)).sum
+  def star2(): BigInt = alternateCalc(256)
 }
