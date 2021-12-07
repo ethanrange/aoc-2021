@@ -1,5 +1,4 @@
 import scala.io.Source
-import scala.annotation.tailrec
 
 class Day6 {
   val first = Source.fromFile("src/main/data/day6/input.txt").getLines.toSeq(0)
